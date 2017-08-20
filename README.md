@@ -45,25 +45,27 @@ $ git clone https://github.com/ThayaFluss/fde-ipn.git
 ```bash
 $ cd fde-ipn
 $ ipython
- import numpy as np
- from cauchy import SemiCircular
- sc = SemiCircular()
+```
+```python
+import numpy as np
+from cauchy import SemiCircular
+sc = SemiCircular()
 ```
 
 * A useful function to comparing  the probability density and the emprical eigenvalue distirbution :
 ```python
- A = np.identity(64) ## Modify here 
- variance = 0.1      ## as you want
- sc.plot_density_info_plus_noise(A, variance)
+A = np.identity(64) ## Modify here 
+variance = 0.1      ## as you want
+sc.plot_density_info_plus_noise(A, variance)
 ```
 Then we get a figure such as demo.
 
 * If you need a value of the density at x:
 ```python
- x = 1.1             ## Modify 
- A = np.identity(64) ## here 
- variance = 0.1      ## as you want
- sc.square_density(x,A, variance)
+x = 1.1             ## Modify 
+A = np.identity(64) ## here 
+variance = 0.1      ## as you want
+sc.square_density(x,A, variance)
 ```
 We get the result such as 
 ```python
@@ -71,10 +73,10 @@ out: array([ 2.0288012])
 ```
 * To get the probability density on an interval:
 ```python
- x = np.linspace(0.01, 2, 201) ## Modify
- A = np.identity(64)           ## here 
- variance = 0.1                ## as you want
- y =sc.square_density(x,A, variance)
+x = np.linspace(0.01, 2, 201) ## Modify
+A = np.identity(64)           ## here 
+variance = 0.1                ## as you want
+y = sc.square_density(x,A, variance)
 ```
 To plot the result y:
 ```python

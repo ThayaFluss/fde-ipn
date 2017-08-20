@@ -26,7 +26,7 @@ Matrix Equation with Positivity Constraints (J. William Helton, Reza Rashidi Far
 * N=64, A = 1, v = 0.1:
 ![identity](https://github.com/ThayaFluss/fde-ipn/blob/master/images/identity.png)
 
-* N=64, A = diag(2,2..., 5, 5,...) (32 of 2 and 32 5), v = 0.1:
+* N=64, A = diag(2,2..., 5, 5,...) (32 of 2 and 32 5), v = 1:
 ![2-5](https://github.com/ThayaFluss/fde-ipn/blob/master/images/2-5.png)
 
 * N=64, A = diag(1,2,3, ..., 64)/8, v = 0.1:
@@ -54,7 +54,7 @@ sc = SemiCircular()
 
 * A useful function to comparing  the probability density and the emprical eigenvalue distirbution :
 ```python
-A = np.identity(64) ## Modify here 
+A = np.identity(64) ## Modify here
 variance = 0.1      ## as you want
 sc.plot_density_info_plus_noise(A, variance)
 ```
@@ -62,20 +62,24 @@ Then we get a figure such as demo.
 
 * If you need a value of the density at x:
 ```python
-x = 1.1             ## Modify 
-A = np.identity(64) ## here 
+x = 1.1             ## Modify
+A = np.identity(64) ## here
 variance = 0.1      ## as you want
 sc.square_density(x,A, variance)
 ```
-We get the result such as 
+We get the result such as
 ```python
 out: array([ 2.0288012])
 ```
 * To get the probability density on an interval:
 ```python
-x = np.linspace(0.01, 2, 201) ## Modify
-A = np.identity(64)           ## here 
-variance = 0.1                ## as you want
+x = np.linspace(0.01, 40, 201) ## Modify
+a = np.zeros(64)
+for i in range(32):
+  a[i] = 2
+  a[i+32]=5
+A = np.diag(a)           ## here
+variance = 1                ## as you want
 y = sc.square_density(x,A, variance)
 ```
 To plot the result y:
@@ -85,7 +89,9 @@ plt.plot(x,y)
 plt.show()
 ```
 
+![2-5_pdf](https://github.com/ThayaFluss/fde-ipn/blob/master/images/2-5_pdf.png)
+
+
 ## License
 
   [MIT](https://github.com/ThayaFluss/fde-ipn/blob/master/LICENSE)
- 

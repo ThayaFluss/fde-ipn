@@ -10,7 +10,7 @@ for a given N x N matrix A and a real number v > 0, define a random matrix
 ####    Y = A + vZ,
 
 where Z is a (real or complex) Ginibre random matrix (i.e. whose entries are i.i.d. and distributed with N(0, sqrt(1/N)) ).
-If the size N is large enough, eigenvalue distribution of YY^* can be approximated by  deterministic probability distribution on positive real line.
+If the size N is large enough, eigenvalue distribution of Y^* Y can be approximated by  deterministic probability distribution on positive real line.
 This tool computes the probability density function of the deterministic eigenvalue distribution.
 
 
@@ -20,7 +20,7 @@ Matrix Equation with Positivity Constraints (J. William Helton, Reza Rashidi Far
 
 
 ## DEMO
-* N=64, A = 0, v = 1 (Marchenko-Paster type):
+* N=64, A = 0, v = 1 (Marchenko-Pastur type):
 ![MP](https://github.com/ThayaFluss/fde-ipn/blob/master/images/MP.png)
 
 * N=64, A = 1, v = 0.1:

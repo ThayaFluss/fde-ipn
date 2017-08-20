@@ -7,10 +7,10 @@ import matplotlib.pyplot as plt
 from timer import Timer
 
 
-class Semicircular(object):
-    """Matrix valued Semicircular."""
+class SemiCircular(object):
+    """Matrix valued SemiCircular."""
     def __init__(self):
-        super(Semicircular, self).__init__()
+        super(SemiCircular, self).__init__()
         self.arg = 0
 
     def eta(self, in_mat):

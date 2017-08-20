@@ -38,9 +38,10 @@ class Semicircular(object):
             if it % 5 == 0:
                 sub = np.linalg.norm(W_new-W)
                 #print("iter=",it, ":", "sub=", sub,"rho_by_(0,0)=", W_new[0,0].real/sp.pi, "rho_by_trace:", ntrace(W_new).real/sp.pi)
+                if sub < thres:
+                    W = W_new
+                    break
             W = W_new
-            if sub < thres:
-                break
         return W
 
     ### -jZG + \eta(G)G = 1
@@ -114,7 +115,6 @@ class Semicircular(object):
 
     def plot_density_info_plus_noise(self, param_mat,variance=1, eps=1e-9,  min_x = 0.01, max_x = 500,\
     resolution=0.2, num_sample = 100):
-
         size = param_mat.shape[1]
         assert param_mat.shape[0] == size
         param_mat = np.matrix(param_mat)
@@ -124,7 +124,7 @@ class Semicircular(object):
             evs= np.linalg.eigh(info_plus_noise(size, param_mat,variance, COMPLEX=True))[0]
             evs_list += evs.tolist()
         plt.figure()
-        plt.hist(evs_list, bins=100, normed=True)
+        plt.hist(evs_list, bins=100, normed=True, label="empirical eigenvalues")
 
         max_x = min(max_x, max(evs_list) )
         min_x = max(min_x, min(evs_list))
@@ -147,7 +147,7 @@ class Semicircular(object):
         rho_list = []
         count =0
         while(x < max_x):
-            print "(density_info_plus_noise)x=", x
+            print "(plot_density_info_plus_noise)x=", x
             x_list.append(x)
             z = sp.sqrt(x+1j*eps)
             L = self.Lambda(z,  2*size, -1)
@@ -156,7 +156,7 @@ class Semicircular(object):
             G = self.Cauchy(G, var_mat, variance)
             G_2 = G / z   ### zG_2(z^2) = G(z)
             rho =  -ntrace(G_2).imag/sp.pi
-            print "(density_info_plus_noise)rho=", rho
+            print "(plot_density_info_plus_noise)rho=", rho
             rho_list.append(rho)
             if x < 0.2:
                 temp = 0.05
@@ -168,7 +168,8 @@ class Semicircular(object):
         Timer0.toc()
         time = Timer0.total_time
         print("(plot_density_info_plus_noise)Total {} points, Took {} sec, {} sec/point".format(count, time, time/count ) )
-        plt.plot(x_list,rho_list, label="pdf",color="red", lw = 2)
+        plt.plot(x_list,rho_list, label="probability density",color="red", lw = 2)
+        plt.legend(loc="upper right")
         plt.show()
 
 

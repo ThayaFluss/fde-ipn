@@ -21,7 +21,7 @@ Matrix Equation with Positivity Constraints (J. William Helton, Reza Rashidi Far
 
 ## DEMO
 * p=240,d=40, A = rectangular_diag(0,0.1,0.2, ..., 3.9), v = 0.1:
-![MP](../images/plot_density/240by40.png)
+![240by40](https://github.com/ThayaFluss/fde-ipn/blob/master/images/plot_density/240by40.png)
 
 
 * p=d=64, A = 0, v = 0.1 (Marchenko-Pastur type):

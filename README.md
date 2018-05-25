@@ -28,7 +28,7 @@ Matrix Equation with Positivity Constraints (J. William Helton, Reza Rashidi Far
 ![MP](https://github.com/ThayaFluss/fde-ipn/blob/master/images/plot_density/MP.png)
 
 
-* p=d=64, A = I, v = 0.1:
+* p=d=64, A = Identity matrix, v = 0.1:
 ![identity](https://github.com/ThayaFluss/fde-ipn/blob/master/images/plot_density/identity.png)
 
 

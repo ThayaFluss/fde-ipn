@@ -40,7 +40,7 @@ def plot_density(A, sigma, scale=1e-2, min_x=-10, max_x=100, num_pt=200,\
     ### Plot histgram of ESD
     if num_shot>0:
         sample = true_sc.ESD(num_shot=num_shot,dim_cauchy_vec=dim_cauchy_vec)
-        plt.hist(sample, range=(min_x, max_x), bins=100, normed=True, label="ESD \n (perturebed by Cauchy noise)",color="pink")
+        plt.hist(sample, range=(min_x, max_x), bins=100, normed=True, label="ESD \n (perturbed by Cauchy noise)",color="pink")
 
     plt.plot(x_array, true_density, label="theoretical value", color="green")
 

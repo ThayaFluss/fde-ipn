@@ -14,27 +14,9 @@ import os
 #sys.path.insert(0, this_dir)
 from timer import Timer
 
+
 def ntrace(matrix):
     return np.trace(matrix)/ matrix.shape[1]
-
-def rectangular_diag(array, p_dim, dim):
-    ell = array.size
-    assert ell <= min(p_dim , dim)
-    out = np.zeros([p_dim, dim])
-    for i in range(ell):
-        out[i][i] = array[i]
-    return out
-
-
-def nsubtrace(matrix, main_dim, sub_dim):
-    assert np.allclose(matrix.shape , [main_dim*sub_dim, main_dim*sub_dim])
-    A = np.array(matrix).reshape([main_dim, sub_dim, main_dim, sub_dim]).transpose([0,2,1,3])
-    out = np.zeros([main_dim, main_dim], np.complex)
-    for m in range(main_dim):
-        for n in range(main_dim):
-            out[m][n] = ntrace(A[m][n])
-    return out
-
 
 def get_moments(matrix, max_index=5):
     ERROR_DEBUG("(get_moments)start...")

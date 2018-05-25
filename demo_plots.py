@@ -65,13 +65,13 @@ num_shot=num_shot,jobname="2-5")
 
 dim = 64
 p_dim = dim
-scale = 1e-3
+scale = 1e-2
 sigma = 0.1
-min_x = -0.25
-max_x = 1
+min_x = -1
+max_x = 12
 a = np.arange(64) + 1
-diag_A = a/80
+diag_A = a/20
 A = rectangular_diag(diag_A,p_dim, dim)
-num_shot = 200
+num_shot = 400
 plot_density(A, sigma,scale, min_x, max_x, \
 num_shot=num_shot,jobname="64")

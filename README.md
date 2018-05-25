@@ -20,15 +20,15 @@ Matrix Equation with Positivity Constraints (J. William Helton, Reza Rashidi Far
 
 
 ## DEMO
-* p=240,d=40, A = rectangular_diag(0,0.1,0.2, ..., 3.9), v = 0.1:
+* p=240,d=40, A = rectangular_diag(0,0.1,0.2, ..., 3.9), \sigma = 0.1:
 ![240by40](https://github.com/ThayaFluss/fde-ipn/blob/master/images/plot_density/240by40.png)
 
 
-* p=d=64, A = 0, v = 0.1 (Marchenko-Pastur type):
+* p=d=64, A = 0, \sigma = 0.1 (Marchenko-Pastur type):
 ![MP](https://github.com/ThayaFluss/fde-ipn/blob/master/images/plot_density/MP.png)
 
 
-* p=d=64, A = Identity matrix, v = 0.1:
+* p=d=64, A = Identity matrix, \sigma = 0.1:
 ![identity](https://github.com/ThayaFluss/fde-ipn/blob/master/images/plot_density/identity.png)
 
 
@@ -36,7 +36,7 @@ Matrix Equation with Positivity Constraints (J. William Helton, Reza Rashidi Far
 ![2-5](https://github.com/ThayaFluss/fde-ipn/blob/master/images/plot_density/2-5.png)
 
 
-* p=d=64, A = diag(1,2,3, ..., 64)/80, v = 0.1:
+* p=d=64, A = diag(1,2,3, ..., 64)/80, \sigma = 0.1:
 ![64](https://github.com/ThayaFluss/fde-ipn/blob/master/images/plot_density/64.png)
 
 ## Requirement

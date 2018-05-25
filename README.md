@@ -27,11 +27,14 @@ Matrix Equation with Positivity Constraints (J. William Helton, Reza Rashidi Far
 * p=d=64, A = 0, v = 0.1 (Marchenko-Pastur type):
 ![MP](https://github.com/ThayaFluss/fde-ipn/blob/master/images/plot_density/MP.png)
 
-* p=d=64, A = 1, v = 0.1:
+
+* p=d=64, A = I, v = 0.1:
 ![identity](https://github.com/ThayaFluss/fde-ipn/blob/master/images/plot_density/identity.png)
+
 
 * p=d=64, A = diag(0.2,0.2..., 0.5, 0.5,...) (32 of 0.2 and 32 0.5), v = 0.1:
 ![2-5](https://github.com/ThayaFluss/fde-ipn/blob/master/images/plot_density/2-5.png)
+
 
 * p=d=64, A = diag(1,2,3, ..., 64)/80, v = 0.1:
 ![64](https://github.com/ThayaFluss/fde-ipn/blob/master/images/plot_density/64.png)

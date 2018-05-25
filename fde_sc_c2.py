@@ -258,7 +258,7 @@ class SemiCircular(object):
             if flag:
                 return G
         #logging.info("cauchy_2by2: sub = {} @ iter= {}".format(np.linalg.norm(sub),d))
-        loggin.info("cauchy_2by2: reahed max_iter")
+        logging.info("cauchy_2by2: reahed max_iter")
         return G_init
 
 

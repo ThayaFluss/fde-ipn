@@ -16,13 +16,13 @@ class SemiCircular(object):
     def eta(self, in_mat):
         M = in_mat.shape[0]
         #assert  M % 2 == 0 and  M == in_mat.shape[1]
-        t2 = ntrace(in_mat[M/2:,M/2:])
-        t1 = ntrace(in_mat[:M/2,:M/2])
-        #assert t2 + t1 == np.trace(in_mat)/(M/2)
+        t2 = ntrace(in_mat[int(M/2):,int(M/2):])
+        t1 = ntrace(in_mat[:int(M/2),:int(M/2)])
+        #assert t2 + t1 == np.trace(in_mat)/(int(M/2))
         out = np.zeros(M, dtype=np.complex)
-        for i in range(M/2):
+        for i in range(int(M/2)):
             out[i]= t2
-        for i in range(M/2, M):
+        for i in range(int(M/2), M):
             out[i]= t1
         out = np.diag(out)
 
@@ -98,9 +98,9 @@ class SemiCircular(object):
         elif test==1:
             #For Linearizaion TricK
             out = np.zeros((size,size), dtype=np.complex)
-            for i in range(size/2):
+            for i in range(int(size/2)):
                 out[i][i]=z
-            for i in range(size/2, size):
+            for i in range(int(size/2), size):
                 out[i][i] = eps*1j
         else:
             out = np.zeros((size,size), dtype=np.complex)
@@ -147,7 +147,7 @@ class SemiCircular(object):
         rho_list = []
         count =0
         while(x < max_x):
-            print "(plot_density_info_plus_noise)x=", x
+            print( "(plot_density_info_plus_noise)x=", x)
             x_list.append(x)
             z = sp.sqrt(x+1j*eps)
             L = self.Lambda(z,  2*size, -1)
@@ -156,7 +156,7 @@ class SemiCircular(object):
             G = self.Cauchy(G, var_mat, variance)
             G_2 = G / z   ### zG_2(z^2) = G(z)
             rho =  -ntrace(G_2).imag/sp.pi
-            print "(plot_density_info_plus_noise)rho=", rho
+            print( "(plot_density_info_plus_noise)rho=", rho)
             rho_list.append(rho)
             if x < 0.2:
                 temp = 0.05

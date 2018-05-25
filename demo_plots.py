@@ -1,13 +1,5 @@
 import numpy as np
-import scipy as sp
-
-from scipy import stats
 from matrix_util import *
-from random_matrices import *
-import matplotlib.pyplot as plt
-from timer import Timer
-
-
 from demo_cauchy import *
 
 num_shot = 200
@@ -22,12 +14,12 @@ A = rectangular_diag(diag_A,p_dim, dim)
 
 scale = 1e-1
 plot_density(A, sigma,scale, min_x, max_x, \
-num_shot=num_shot,jobname="40by240")
+num_shot=num_shot,jobname="240by40")
 
 
 dim = 64
 p_dim = dim
-scale = 1e-4
+scale = 1e-3
 sigma = 0.1
 min_x = -0.1
 max_x = 0.1
@@ -41,9 +33,9 @@ num_shot=num_shot,jobname="MP")
 
 dim = 64
 p_dim = dim
-scale = 1e-4
+scale = 1e-3
 sigma = 0.1
-min_x = -1
+min_x = 0
 max_x = 2
 diag_A = np.ones(dim)
 A = rectangular_diag(diag_A,p_dim, dim)
@@ -55,7 +47,7 @@ num_shot=num_shot,jobname="identity")
 
 dim = 64
 p_dim = dim
-scale = 1e-4
+scale = 1e-3
 sigma = 0.1
 min_x = -0.1
 max_x = 0.5
@@ -73,7 +65,7 @@ num_shot=num_shot,jobname="2-5")
 
 dim = 64
 p_dim = dim
-scale = 1e-4
+scale = 1e-3
 sigma = 0.1
 min_x = -0.25
 max_x = 1

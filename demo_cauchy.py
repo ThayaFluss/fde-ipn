@@ -16,7 +16,7 @@ from fde_sc_c2 import SemiCircular as SC ###for rectanglar
 
 
 
-def plot_density(A, sigma, scale=1e-9, min_x=-10, max_x=100, num_pt=200,\
+def plot_density(A, sigma, scale=1e-2, min_x=-10, max_x=100, num_pt=200,\
  dim_cauchy_vec=10, num_shot=0,\
  jobname="ESD_and_density"):
 
